@@ -1,6 +1,6 @@
 var Units = require("./Units.json");
 
-var unitPattern = /\[([\w\s]+)\]/g;
+var unitPattern = /\[([\w\s\d.!,'\-]+)\]/g;
 
 module.exports = function (text) {
 
