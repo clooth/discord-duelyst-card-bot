@@ -21,8 +21,12 @@ bot.on("message", function (message) {
     if (!unit)
         return;
 
+    console.log("Got request for " + unit.Name);
+
     bot.sendFile(message.channel, "./cards/" + unit.Id + ".png" , unit.Name + ".png");
 });
+
+console.log("Running bot...");
 
 bot.login(args.user, args.password);
 
