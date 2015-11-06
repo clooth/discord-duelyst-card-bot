@@ -13,7 +13,7 @@ var bot = new Discord.Client();
 
 bot.on("message", function (message) {
 
-    if (message.channel.id != config.channel)
+    if (message.channel.serverID != config.channel)
         return;
 
     var unit = resolveUnit(message.content);
@@ -23,7 +23,7 @@ bot.on("message", function (message) {
 
     console.log("Got request for " + unit.Name);
 
-    bot.sendFile(message.channel, "./cards/" + unit.Id + ".png" , unit.Name + ".png");
+    bot.sendFile(message.channel, unit.Image , unit.Name + ".png");
 });
 
 console.log("Running bot...");
